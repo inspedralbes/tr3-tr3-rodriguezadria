@@ -1,0 +1,47 @@
+[
+    {
+        "id": 1,
+        "titulo": "El padrino",
+        "descripcion": "El padrino es una película de crimen y drama de 1972 dirigida por Francis Ford Coppola y basada en la novela del mismo nombre de Mario Puzo.",
+        "director": "Francis Ford Coppola",
+        "release_date": "1972-03-14",
+        "duracion": 175,
+        "enlace_imagen": "https://images.unsplash.com/photo-1580927752452-0ad8d1f82e26"
+    },
+    {
+        "id": 2,
+        "titulo": "La lista de Schindler",
+        "descripcion": "La lista de Schindler es una película de drama histórico de 1993 dirigida por Steven Spielberg y basada en la novela de Thomas Keneally.",
+        "director": "Steven Spielberg",
+        "release_date": "1993-12-15",
+        "duracion": 195,
+        "enlace_imagen": "https://images.unsplash.com/photo-1565394604806-f89e8ecbc281"
+    },
+    {
+        "id": 3,
+        "titulo": "El Señor de los Anillos: La Comunidad del Anillo",
+        "descripcion": "El Señor de los Anillos: La Comunidad del Anillo es una película de fantasía de 2001 dirigida por Peter Jackson y basada en la novela de J.R.R. Tolkien.",
+        "director": "Peter Jackson",
+        "release_date": "2001-12-19",
+        "duracion": 178,
+        "enlace_imagen": "https://images.unsplash.com/photo-1558489981-1b0c9e0a5a89"
+    },
+    {
+        "id": 4,
+        "titulo": "Forrest Gump",
+        "descripcion": "Forrest Gump es una película de comedia dramática de 1994 dirigida por Robert Zemeckis y basada en la novela de Winston Groom.",
+        "director": "Robert Zemeckis",
+        "release_date": "1994-07-06",
+        "duracion": 142,
+        "enlace_imagen": "../web/img/forrestgump.jpg"
+    },
+    {
+        "id": 5,
+        "titulo": "Pulp Fiction",
+        "descripcion": "Pulp Fiction es una película de crimen y drama de 1994 dirigida por Quentin Tarantino y protagonizada por John Travolta, Uma Thurman y Samuel L. Jackson.",
+        "director": "Quentin Tarantino",
+        "release_date": "1994-10-14",
+        "duracion": 154,
+        "enlace_imagen": "https://images.unsplash.com/photo-1508614970637-68e8b8e3b4a9"
+    }
+]
