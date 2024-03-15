@@ -9,13 +9,13 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
+    public function up()
     {
         Schema::create('sessions', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('movie_id')->constrained('movies');
-            $table->date('date');
-            $table->time('hour');
+            $table->foreignId('peli_id')->constrained('movies');
+            $table->time('hora'); // Cambiado a 'time'
+            $table->date('fecha'); // Cambiado a 'date'
             $table->timestamps();
         });
     }
