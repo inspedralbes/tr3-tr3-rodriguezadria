@@ -17,7 +17,7 @@
   </template>
   
   <script>
-  import { compraStore } from '../stores/compra.js'
+  import { compraStore } from '../stores/compra.js';
   
   export default defineComponent({
     setup() {
