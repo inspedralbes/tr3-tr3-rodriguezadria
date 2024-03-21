@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
+class CreateComprasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,9 @@ return new class extends Migration
     {
         Schema::create('compras', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('sessions_id')->constrained('sessions');
-            $table->foreignId('id_butaca')->constrained('butacas');
+            $table->foreignId('session_id')->constrained('sessions');
+            $table->foreignId('butaca_id')->constrained('butacas');
+            $table->foreignId('user_id')->constrained('users');
             $table->timestamps();
         });
     }

@@ -1,26 +1,35 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Movies;
 use App\Models\Sessions;
+use App\Models\Compra;
 
 class SessionController extends Controller
 {
-    public function mostrarSession()
+    public function mostrarSesion()
     {
-        $sessions = Sessions::all();
+        $sesiones = Sessions::with('movie')->get()->map(function ($sesion) {
+            return [
+                'sesion_id' => $sesion->id,
+                'hora' => $sesion->hora,
+                'fecha' => $sesion->fecha,
+                'movie' => [
+                    'titulo' => $sesion->movie->titulo ?? 'No Disponible',
+                    'descripcion' => $sesion->movie->descripcion ?? 'No Disponible',
+                    'enlace_imagen' => $sesion->movie->enlace_imagen ?? 'No Disponible',
+                ],
+            ];
+        });
 
-        // Cargar información de la película asociada a cada sesión
-        foreach ($sessions as $session) {
-            $session->movie = Movies::find($session->peli_id);
-        }
-
-        return response()->json($sessions);
+        return response()->json(['sesiones' => $sesiones]);
     }
 
-    public function mostrarSessionId($id)
+    public function getButacasCompradas($sessionId)
     {
-        $session =  Sessions::findOrFail($id);
-        return response()->json($session);
+        $compras = Compra::where('sessions_id', $sessionId)->get();
+        $butacasId = $compras->pluck('id_butaca');
+
+        return response()->json($butacasId);
     }
+
 }

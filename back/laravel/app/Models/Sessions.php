@@ -8,4 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Sessions extends Model
 {
     use HasFactory;
+
+    public function movie()
+    {
+        return $this->belongsTo(Movies::class, 'peli_id');
+    }
+
+    public function compras()
+    {
+        return $this->hasMany(Compra::class, 'sessions_id');
+    }
 }

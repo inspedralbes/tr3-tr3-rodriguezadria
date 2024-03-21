@@ -13,9 +13,8 @@ return new class extends Migration
     {
         Schema::create('seats', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('session_id')->constrained('sessions');
-            $table->string('seat_number');
-            $table->enum('status', ['available', 'occupied'])->default('available');
+            $table->string('occupancy')->default('available');
+            $table->decimal('price', 8, 2);
             $table->timestamps();
         });
     }
