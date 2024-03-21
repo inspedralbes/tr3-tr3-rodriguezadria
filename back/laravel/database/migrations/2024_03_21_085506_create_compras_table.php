@@ -11,17 +11,19 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('butacas', function (Blueprint $table) {
+        Schema::create('compras', function (Blueprint $table) {
             $table->id();
-            $table->string('numero');
-            $table->enum('estado', ['disponible', 'ocupada'])->default('disponible');
-            $table->decimal('precio', 8, 2);
+            $table->foreignId('sessions_id')->constrained('sessions');
+            $table->foreignId('id_butaca')->constrained('butacas');
             $table->timestamps();
         });
     }
 
-    public function down()
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
     {
-        Schema::dropIfExists('butacas');
+        Schema::dropIfExists('compras');
     }
 };

@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('sessions', function (Blueprint $table) {
             $table->id();
             $table->foreignId('peli_id')->constrained('movies');
-            $table->time('hora'); // Cambiado a 'time'
-            $table->date('fecha'); // Cambiado a 'date'
+            $table->time('hora');
+            $table->date('fecha');
             $table->timestamps();
         });
     }

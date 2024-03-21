@@ -17,4 +17,10 @@ class SessionController extends Controller
 
         return response()->json($sessions);
     }
+
+    public function mostrarSessionId($id)
+    {
+        $session =  Sessions::findOrFail($id);
+        return response()->json($session);
+    }
 }

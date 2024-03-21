@@ -11,10 +11,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('compras', function (Blueprint $table) {
+        Schema::create('seats', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('sesion_id')->constrained('sessions');
-            $table->foreignId('butaca_id')->constrained('butacas');
+            $table->foreignId('session_id')->constrained('sessions');
+            $table->string('seat_number');
+            $table->enum('status', ['available', 'occupied'])->default('available');
             $table->timestamps();
         });
     }
@@ -24,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('comprar_entradas');
+        Schema::dropIfExists('seats');
     }
 };
