@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/pelis',[MoviesController::class, 'mostrarPelis']);
 Route::get('/mostrar-session',[SessionController::class, 'mostrarSession']);
+Route::get('/sessions/{id}', [SessionController::class, 'mostrarSessionId']);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();

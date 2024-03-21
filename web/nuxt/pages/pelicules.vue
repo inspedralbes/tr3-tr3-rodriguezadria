@@ -1,12 +1,12 @@
 <template>
-    <div class="movie-container">
+    <div class="movie_container">
       <h1>Películas</h1>
       <div class="card-container">
         <div v-for="movie in movies" class="card">
           <div class="card-image">
             <img :src="movie.enlace_imagen" alt="Imagen de la película">
           </div>
-          <div class="card-content">
+          <div class="content">
             <h2>{{ movie.titulo }}</h2>
             <p><strong>Director:</strong> {{ movie.director }}</p>
             <p><strong>Fecha de lanzamiento:</strong> {{ movie.release_date }}</p>
@@ -46,7 +46,7 @@
   </script>
   
   <style scoped>
-  .movie-container {
+  .movie_container {
     margin: 0 auto;
     padding: 40px;
   }
