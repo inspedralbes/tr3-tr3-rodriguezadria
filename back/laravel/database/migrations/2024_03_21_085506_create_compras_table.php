@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('compras', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('sesion_id')->constrained('sessions');
-            $table->foreignId('butaca_id')->constrained('butacas');
+            $table->foreignId('sessions_id')->constrained('sessions');
+            $table->foreignId('id_butaca')->constrained('butacas');
             $table->timestamps();
         });
     }
@@ -24,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('comprar_entradas');
+        Schema::dropIfExists('compras');
     }
 };

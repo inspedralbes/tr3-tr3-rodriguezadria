@@ -1,7 +1,7 @@
 <template>
     <div>
-      <header class="cine-header">
-        <nav class="cine-menu">
+      <header class="cine_header">
+        <nav class="cine_menu">
           <ul>
             <li><nuxt-link to="/">Home</nuxt-link></li>
             <li><nuxt-link to="/pelicules">Pe·licules</nuxt-link></li>
@@ -17,11 +17,18 @@
   </script>
   
   <style>
-  /* Estilos para el menú de navegación */
-  nav {
+
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .cine_header {
     background-color: #333;
     color: #fff;
-    padding: 10px;
+    width: 100vw;
+    padding: 40px;
   }
   
   nav ul {

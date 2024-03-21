@@ -47,6 +47,8 @@
   
   <style scoped>
   .movie_container {
+    width: 100vw;
+    height: 100vh;
     margin: 0 auto;
     padding: 40px;
   }

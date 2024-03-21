@@ -17,9 +17,7 @@
   </template>
   
   <script>
-//   import { defineComponent } from 'vue';
-//   import { useButacasStore } from '../stores/butacas';
-    import { compraStore } from '../stores/compra';
+  import { compraStore } from '../stores/compra.js'
   
   export default defineComponent({
     setup() {
@@ -38,11 +36,11 @@
       const getButacaImage = (status) => {
         switch (status) {
           case 'selected':
-            return '/butacaVerde.jpg';
+            return '/.jpg';
           case 'ocupado':
-            return '/butacaOcupada.jpg';
+            return '/.jpg';
           default:
-            return '/butacaAzul.png';
+            return '/.png';
         }
       };
   
