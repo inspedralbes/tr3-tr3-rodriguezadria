@@ -27,7 +27,7 @@
     methods: {
       async fetchSessions() {
         try {
-          const response = await fetch('http://localhost:8000/api/mostrar-session');
+          const response = await fetch('http://localhost:8000/api/mostrar-sesion');
           if (!response.ok) {
             throw new Error('Error al obtener la sesión');
           }

@@ -18,8 +18,8 @@ use App\Http\Controllers\AuthentificationController;
 */
 
 Route::get('/pelis',[MoviesController::class, 'mostrarPelis']);
-Route::get('/mostrar-session',[SessionController::class, 'mostrarSession']);
-Route::get('/mostrar-session/{id}', [SessionController::class, 'mostrarSessionId']);
+Route::get('/mostrar-sesion',[SessionController::class, 'mostrarSesion']);
+Route::get('/mostrar-sesion/{id}', [SessionController::class, 'mostrarSesionId']);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();

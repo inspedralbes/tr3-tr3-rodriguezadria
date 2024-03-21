@@ -7,29 +7,21 @@ use App\Models\Compra;
 class SessionController extends Controller
 {
     public function mostrarSesion()
-    {
-        $sesiones = Sessions::with('movie')->get()->map(function ($sesion) {
-            return [
-                'sesion_id' => $sesion->id,
-                'hora' => $sesion->hora,
-                'fecha' => $sesion->fecha,
-                'movie' => [
-                    'titulo' => $sesion->movie->titulo ?? 'No Disponible',
-                    'descripcion' => $sesion->movie->descripcion ?? 'No Disponible',
-                    'enlace_imagen' => $sesion->movie->enlace_imagen ?? 'No Disponible',
-                ],
-            ];
-        });
+{
+    $sessions = Sessions::all();
+    return response()->json(['sessions' => $sessions]);
+}
 
-        return response()->json(['sesiones' => $sesiones]);
+public function mostrarSesionPorId($sesionId)
+{
+    $session = Sessions::find($sesionId);
+    
+    if (!$session) {
+        return response()->json(['error' => 'No se encontró la sesión']);
     }
 
-    public function getButacasCompradas($sessionId)
-    {
-        $compras = Compra::where('sessions_id', $sessionId)->get();
-        $butacasId = $compras->pluck('id_butaca');
+    return response()->json(['session' => $session]);
+}
 
-        return response()->json($butacasId);
-    }
 
 }
